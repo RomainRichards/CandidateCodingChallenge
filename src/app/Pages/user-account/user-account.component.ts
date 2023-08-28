@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService, /*UserResponse*/ } from 'src/app/Services/user.service';
+import { UserService } from 'src/app/Services/user.service';
 import { User } from 'src/app/interface/user';
+
 
 @Component({
   selector: 'app-user-account',
@@ -11,6 +12,7 @@ export class UserAccountComponent implements OnInit {
 
   constructor(private userService: UserService) {}
 
+
   usersList: User[] = []; // Imported from user.services, array of data.
 
   // Get data from Api.
@@ -19,6 +21,7 @@ export class UserAccountComponent implements OnInit {
   ngOnInit(): void {
     this._getUserLists(); 
     this._getUser();
+
   }
 
   // Call Http client inside the function, through userService.

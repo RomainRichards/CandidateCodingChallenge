@@ -3,28 +3,29 @@
 <!--Table headers, and binding properties-->
 <!--Btns to delete and add user-->
 
-<div>
     <div class="mt-5 container">
-        <div class="card">
-            <div class="card-header">
+        <div>     
+            <div class="card">
+            <div class="card-header">             
                 <h4>Users List
                     <a routerLink="/user/create" class="btn btn-primary float-end">Add User</a>
                 </h4>
             </div>
             <div class="card-body">
-
-                <table class="table tabl-striped table-bordered">
+                <table class="table table-striped table-bordered">
+                    
                     <thead>
                         <tr>
+                            
                             <th>ID</th>
                             <th>NAME</th> 
                             <th>USERNAME</th> 
                             <th>EMAIL</th> 
-                            <th>PHONE</th>
-                            <th>ACTION</th>                             
+                            <th>PHONE</th>                            
                         </tr>
                     </thead>
                     <tbody>
+                       
                         <tr *ngFor="let item of this.usersList">
                             <td>{{item.id}}</td>
                             <td>{{item.name}}</td>
@@ -32,14 +33,13 @@
                             <td>{{item.email}}</td>
                             <td>{{item.phone}}</td>
                             <td>
-                                <a routerLink="/users/{{item.id}}/edit" class="btn btn-success">Edit</a>
-                                <button type="button" class="btn btn-danger">Delete</button>
                             </td>
                         </tr>
+                    
                     </tbody> 
+                
                 </table>
-                             
+            </div>                   
             </div>
         </div>
     </div>
-</div>

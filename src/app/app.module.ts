@@ -9,8 +9,6 @@ import { HomePageComponent } from './Pages/home-page/home-page.component';
 import { NavbarComponent } from './Pages/Partials/navbar/navbar.component';
 import { UserCreateComponent } from './Pages/user-create/user-create.component';
 import { UserAccountComponent } from './Pages/user-account/user-account.component';
-import { UserEditComponent } from './Pages/user-edit/user-edit.component';
-import { UserDeleteComponent } from './Pages/user-delete/user-delete.component';
 
 
 
@@ -22,8 +20,6 @@ import { UserDeleteComponent } from './Pages/user-delete/user-delete.component';
     NavbarComponent,
     UserCreateComponent,
     UserAccountComponent,
-    UserEditComponent,
-    UserDeleteComponent
 
   ],
   imports: [
