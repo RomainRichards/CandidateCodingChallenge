@@ -1,3 +1,47 @@
+<!--Table to show user accounts-->
+<!--Add User btn routes to user-create page-->
+<!---->
+
 <div>
-    Users
+    <div class="mt-5 container">
+        <div class="card">
+            <div class="card-header">
+                <h4>Users List
+                    <a routerLink="/user/create" class="btn btn-primary float-end">Add User</a>
+                </h4>
+            </div>
+            <div class="card-body">
+
+                <table class="table tabl-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>NAME</th> 
+                            <th>USERNAME</th> 
+                            <th>EMAIL</th> 
+                            <th>ADDRESS</th>
+                            <th>PHONE</th> 
+                            <th>COMPANY</th>                             
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of this.users">
+                            <td>{{item.id}}</td>
+                            <td>{{item.name}}</td>
+                            <td>{{item.username}}</td>
+                            <td>{{item.email}}</td>
+                            <td>{{item.address}}</td>
+                            <td>{{item.phone}}</td>
+                            <td>{{item.company}}</td>
+                            <td>
+                                <a routerLink="/" class="btn btn-success">Edit</a>
+                                <button type="button" class="btn btn-danger">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody> 
+                </table>
+                             
+            </div>
+        </div>
+    </div>
 </div>
