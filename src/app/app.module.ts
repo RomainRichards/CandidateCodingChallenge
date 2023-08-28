@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomePageComponent } from './Pages/home-page/home-page.component';
 import { AboutPageComponent } from './Pages/about-page/about-page.component';
+import { NavbarComponent } from './Pages/Partials/navbar/navbar.component';
+import { UserAccountsComponent } from './Pages/user-accounts/user-accounts.component';
 
 
 
@@ -14,6 +16,8 @@ import { AboutPageComponent } from './Pages/about-page/about-page.component';
     AppComponent,
     HomePageComponent,
     AboutPageComponent,
+    NavbarComponent,
+    UserAccountsComponent,
 
   ],
   imports: [
