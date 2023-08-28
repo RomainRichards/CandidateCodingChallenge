@@ -1,5 +1,6 @@
 <!--Table information for creating a usere-->
 <!--thows errors when submit btn is clicked with black entries [*ngIf]-->
+<!--when it's loading, it will call the spinner component-->
 <div>
     <div class="container mt-5">
         <div class="card">
@@ -11,35 +12,36 @@
         </div>
         <div class="card-body">
 
-            <form (ngSubmit)="saveUser()">
-                <div class="mb-3">
-                    <label>Name</label>
-                    <input type="text" [(ngModel)]="name" name="name" class="form-control">
-                    <span *ngIf="errors.name" class="text-danger">{{errors.name}}</span>
-                </div>
-
-                <div class="mb-3">
-                    <label>Username</label>
-                    <input type="text" [(ngModel)]="username" name="username" class="form-control">
-                    <span *ngIf="errors.username" class="text-danger">{{errors.username}}</span>
-                </div>
-
-                <div class="mb-3">
-                    <label>Email</label>
-                    <input type="text" [(ngModel)]="email" name="email" class="form-control">
-                    <span *ngIf="errors.email" class="text-danger">{{errors.email}}</span>
-                </div>
-
-                <div class="mb-3">
-                    <label>Address</label>
-                    <input type="text" [(ngModel)]="address" name="address" class="form-control">
-                    <span *ngIf="errors.address" class="text-danger">{{errors.address}}</span>
-                </div>
-                <div class="md-3">
-                    <button type="submit" class="btn btn-primary">Save</button>
-                </div>
-
-            </form>
+            <div *ngIf="isLoading; else elseForm">
+                <app-loader :title="loadingTitle" />
+            </div>
+            <ng-template #elseForm>
+                <form (ngSubmit)="saveUser()">
+                    <div class="mb-3">
+                        <label>Name</label>
+                        <input type="text" [(ngModel)]="name" name="name" class="form-control">
+                    </div>
+    
+                    <div class="mb-3">
+                        <label>Username</label>
+                        <input type="text" [(ngModel)]="username" name="username" class="form-control">
+                    </div>
+    
+                    <div class="mb-3">
+                        <label>Email</label>
+                        <input type="text" [(ngModel)]="email" name="email" class="form-control">
+                    </div>
+    
+                    <div class="mb-3">
+                        <label>Address</label>
+                        <input type="text" [(ngModel)]="address" name="address" class="form-control">
+                    </div>
+                    <div class="md-3">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+    
+                </form>
+            </ng-template> 
         </div>
     </div>
 </div>

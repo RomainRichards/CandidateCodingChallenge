@@ -9,6 +9,8 @@ import { HomePageComponent } from './Pages/home-page/home-page.component';
 import { AboutPageComponent } from './Pages/about-page/about-page.component';
 import { NavbarComponent } from './Pages/Partials/navbar/navbar.component';
 import { UserCreateComponent } from './Pages/user-create/user-create.component';
+import { LoaderComponent } from './Pages/Partials/loader/loader.component';
+import { UserAccountComponent } from './Pages/user-account/user-account.component';
 
 
 
@@ -19,7 +21,9 @@ import { UserCreateComponent } from './Pages/user-create/user-create.component';
     HomePageComponent,
     AboutPageComponent,
     NavbarComponent,
-    UserCreateComponent
+    UserCreateComponent,
+    LoaderComponent,
+    UserAccountComponent
 
   ],
   imports: [
