@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserService } from 'src/app/Services/user.service';
 
 @Component({
   selector: 'app-user-create',
@@ -7,19 +8,40 @@ import { Component } from '@angular/core';
 })
 export class UserCreateComponent {
 
-    name!: string
-    username!: string
-    email!: string
-    address!: string
+  // Call user-service inside constructor.
+  constructor(private userService: UserService) {}
 
-    // Function, so when you submit the form you should get all the details.
-    saveUser(){
+  name!: string
+  username!: string
+  email!: string
+  address!: string
 
-      var inputData = {
-        name: this.name,
-        username: this.username,
-        email: this.email,
-        address: this.address
-      }
+  errors: any = [];
+
+  // Function, so when you submit the form you should get all the details.
+  saveUser(){
+
+    var inputData = {
+      name: this.name,
+      username: this.username,
+      email: this.email,
+      address: this.address
     }
+
+    this.userService.saveUser(inputData).subscribe({
+      next: (res: any) => {
+        console.log(res, 'response')
+        alert(res.message);
+        this.name = '';
+        this.username = '';
+        this.email = '';
+        this.name = '';
+        this.address = '';
+      },
+      error: (err: any) => {
+        this.errors = err.error.errors
+        console.log(err.error.errors, 'errors')
+      }
+    });
+  }
 }
