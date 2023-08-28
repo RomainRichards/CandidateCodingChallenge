@@ -9,6 +9,8 @@ import { HomePageComponent } from './Pages/home-page/home-page.component';
 import { NavbarComponent } from './Pages/Partials/navbar/navbar.component';
 import { UserCreateComponent } from './Pages/user-create/user-create.component';
 import { UserAccountComponent } from './Pages/user-account/user-account.component';
+import { UserPostComponent } from './Pages/user-post/user-post.component';
+import { UserService } from './Services/user.service';
 
 
 
@@ -20,6 +22,7 @@ import { UserAccountComponent } from './Pages/user-account/user-account.componen
     NavbarComponent,
     UserCreateComponent,
     UserAccountComponent,
+    UserPostComponent,
 
   ],
   imports: [
@@ -28,7 +31,7 @@ import { UserAccountComponent } from './Pages/user-account/user-account.componen
     FormsModule, // Imported to use ngModel in user-create 
     HttpClientModule // Import httpclientmodule to do http calls.
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

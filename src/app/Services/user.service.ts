@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from '../interface/user';
@@ -31,9 +31,10 @@ export class UserService {
     return this.httpClient.post<User>(`${this.apiUserUrl}/users`, user);
   }
 
-  // Add a method to fetch user data by ID.
-  getUserById(id: number): Observable<User>{
-    return this.httpClient.get<User>(`${this.apiUserUrl}/users/${id}`)
+  // Gets user post from post api.
+  getPostsForSelectedUserByparameter(selectedUserId:string): Observable<any> 
+  {
+      let params1 = new HttpParams().set('userId',selectedUserId);
+      return this.httpClient.get(`${this.apiUserUrl}/posts`, {params: params1});
   }
-
 }

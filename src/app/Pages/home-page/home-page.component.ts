@@ -5,8 +5,9 @@ declare var particlesJS: any;
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.css']
 })
-export class HomePageComponent {
 
+// Loads the particlesJS to display on home page.
+export class HomePageComponent {
   ngOnInit(): void {
     particlesJS.load('particles', 'assets/particles.json', () => {
       console.log('particles.js config loaded');

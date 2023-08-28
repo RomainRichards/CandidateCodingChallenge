@@ -1,0 +1,56 @@
+
+<!--Populate select/drop down with name of users.-->
+<!--Whenever you select from the dropdown, that select id will be populated in UserSelected model-->
+<!--Corresponding post populate when a user is selected from the drop down-->
+<!--Connects both apis-->
+<div class="text-center" style="margin: auto; width: 50%; border: 3px solid black; padding: 10px; ">
+
+    <select  [(ngModel)]="UserSelected" (ngModelChange)="onUserSelected($event)">
+        <option *ngFor="let user of lstUsers" [value]="user.id">
+            {{user.name}}
+        </option>
+    </select>
+
+</div>
+
+<br>
+<br>
+
+<h3 class="text-center" >Select from drop-down to display user's posts.</h3>
+
+<div class="mt-5 container">
+    <div>     
+        <div class="card">
+        <div class="card-header">             
+            <h4>User Posts
+            </h4>
+        </div>
+        <div class="card-body">
+            <table class="table table-striped table-bordered">
+                
+                <thead>
+                    <tr>
+                        <th>UserId</th>
+                        <th>Id</th>                        
+                        <th>Title</th>
+                        <th>Body</th>                           
+                    </tr>
+                </thead>
+                <tbody>
+                   
+                    <tr *ngFor="let post of lstPosts">
+                        <td>{{post.userId}}</td>
+                        <td>{{post.id}}</td>                       
+                        <td>{{post.title}}</td>
+                        <td>{{post.body}}</td>
+                        <td>    
+                        </td>
+                    </tr>
+                
+                </tbody> 
+            
+            </table>
+        </div>                   
+        </div>
+    </div>
+</div>
