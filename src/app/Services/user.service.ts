@@ -9,7 +9,8 @@ import { User } from '../interface/user';
 
 // Here will be all the Http calls.
 export class UserService {
-
+ 
+  // Api base url.
   private apiUserUrl = `https://jsonplaceholder.typicode.com`;
 
   // Call Http client inside constructor function.
@@ -26,7 +27,17 @@ export class UserService {
   }
 
   _saveUser(user: User): Observable<User> {
-    // Use post method to save the data.
+    // Use method to save the data.
     return this.httpClient.post<User>(`${this.apiUserUrl}/users`, user);
+  }
+
+  // Add a method to fetch user data by ID.
+  getUserById(user: number): Observable<User>{
+    return this.httpClient.get<User>(`${this.apiUserUrl}/users`)
+  }
+
+    // Use method to update the data. Pass in the id.
+  updateUser(user: User): Observable<User> {
+    return this.httpClient.patch<User>(`${this.apiUserUrl}/users/${user.id}`, user);
   }
 }

@@ -12,6 +12,8 @@ export class UserCreateComponent implements OnInit {
   // Call user-service inside constructor.
   constructor(private userService: UserService) {}
 
+  // User properties, takes user input and binds to the User interface properties. 
+  // It is updated in the HTML console/Inspect. this Api don't update.
   user: User = {
     name: '',
     username: '',

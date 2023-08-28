@@ -6,10 +6,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './Pages/home-page/home-page.component';
-import { AboutPageComponent } from './Pages/about-page/about-page.component';
 import { NavbarComponent } from './Pages/Partials/navbar/navbar.component';
 import { UserCreateComponent } from './Pages/user-create/user-create.component';
-import { LoaderComponent } from './Pages/Partials/loader/loader.component';
 import { UserAccountComponent } from './Pages/user-account/user-account.component';
 import { UserEditComponent } from './Pages/user-edit/user-edit.component';
 import { UserDeleteComponent } from './Pages/user-delete/user-delete.component';
@@ -21,10 +19,8 @@ import { UserDeleteComponent } from './Pages/user-delete/user-delete.component';
   declarations: [
     AppComponent,
     HomePageComponent,
-    AboutPageComponent,
     NavbarComponent,
     UserCreateComponent,
-    LoaderComponent,
     UserAccountComponent,
     UserEditComponent,
     UserDeleteComponent

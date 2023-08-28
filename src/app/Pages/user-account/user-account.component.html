@@ -1,6 +1,7 @@
 <!--Table to show user accounts-->
 <!--Add User btn routes to user-create page-->
-<!---->
+<!--Table headers, and binding properties-->
+<!--Btns to delete and add user-->
 
 <div>
     <div class="mt-5 container">
@@ -31,7 +32,7 @@
                             <td>{{item.email}}</td>
                             <td>{{item.phone}}</td>
                             <td>
-                                <a routerLink="/" class="btn btn-success">Edit</a>
+                                <a routerLink="/users/{{item.id}}/edit" class="btn btn-success">Edit</a>
                                 <button type="button" class="btn btn-danger">Delete</button>
                             </td>
                         </tr>

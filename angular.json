@@ -29,7 +29,8 @@
               "bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": [
-              "bootstrap/dist/js/bootstrap.bundle.min.js"
+              "bootstrap/dist/js/bootstrap.bundle.min.js",
+              "./node_modules/particles.js/particles.js"
             ]
           },
           "configurations": {
