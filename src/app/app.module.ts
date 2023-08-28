@@ -11,6 +11,8 @@ import { NavbarComponent } from './Pages/Partials/navbar/navbar.component';
 import { UserCreateComponent } from './Pages/user-create/user-create.component';
 import { LoaderComponent } from './Pages/Partials/loader/loader.component';
 import { UserAccountComponent } from './Pages/user-account/user-account.component';
+import { UserEditComponent } from './Pages/user-edit/user-edit.component';
+import { UserDeleteComponent } from './Pages/user-delete/user-delete.component';
 
 
 
@@ -23,7 +25,9 @@ import { UserAccountComponent } from './Pages/user-account/user-account.componen
     NavbarComponent,
     UserCreateComponent,
     LoaderComponent,
-    UserAccountComponent
+    UserAccountComponent,
+    UserEditComponent,
+    UserDeleteComponent
 
   ],
   imports: [

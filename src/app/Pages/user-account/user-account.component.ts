@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService, UserResponse } from 'src/app/Services/user.service';
+import { UserService, /*UserResponse*/ } from 'src/app/Services/user.service';
+import { User } from 'src/app/interface/user';
 
 @Component({
   selector: 'app-user-account',
@@ -10,7 +11,7 @@ export class UserAccountComponent implements OnInit {
 
   constructor(private userService: UserService) {}
 
-  users!: UserResponse[]; // Imported from user.services, array of data.
+  usersList: User[] = []; // Imported from user.services, array of data.
 
   // Get data from Api.
   // when page loads it calls the ngOnInIt function, 
@@ -25,18 +26,29 @@ export class UserAccountComponent implements OnInit {
   // Return multiple users. 
   _getUserLists(): void {
     this.userService.getUsers().subscribe(
-      (response) => console.log(response),
-      (error: any) => console.log(error),
+      (response: User[]) => {
+        this.usersList = response; // Populate the usersList with the API response.
+      },
+      (error: any) => {
+        console.error('Error fetching user list:', error);
+        // Handle the error / display an error message to the user.
+      },
       () => console.log('Finished getting users')
     );
-  } 
+  }
 
   // Return one user.
   _getUser(): void {
     this.userService.getUser().subscribe(
-      (response) => console.log(response),
-      (error: any) => console.log(error),
+      () => {
+        // Handle the single user response here, if needed.
+      },
+      (error: any) => {
+        console.error('Error fetching user:', error);
+        // Handle the error / display an error message to the user.
+      },
       () => console.log('Finished getting user')
     );
-  } 
+  }
 }
+

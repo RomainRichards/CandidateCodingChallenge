@@ -19,20 +19,17 @@
                             <th>NAME</th> 
                             <th>USERNAME</th> 
                             <th>EMAIL</th> 
-                            <th>ADDRESS</th>
-                            <th>PHONE</th> 
-                            <th>COMPANY</th>                             
+                            <th>PHONE</th>
+                            <th>ACTION</th>                             
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let item of this.users">
+                        <tr *ngFor="let item of this.usersList">
                             <td>{{item.id}}</td>
                             <td>{{item.name}}</td>
                             <td>{{item.username}}</td>
                             <td>{{item.email}}</td>
-                            <td>{{item.address}}</td>
                             <td>{{item.phone}}</td>
-                            <td>{{item.company}}</td>
                             <td>
                                 <a routerLink="/" class="btn btn-success">Edit</a>
                                 <button type="button" class="btn btn-danger">Delete</button>

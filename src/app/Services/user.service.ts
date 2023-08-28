@@ -3,20 +3,6 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from '../interface/user';
 
-export interface UserResponse {
-
-  // Undefine so the Id can be automatically 
-  // create when new user is added, with out declaring it.
-  id?: number 
-  name: string
-  username: string
-  email: string
-  address: string
-  phone: string
-  company: string
-
-}
-
 @Injectable({
   providedIn: 'root'
 })
